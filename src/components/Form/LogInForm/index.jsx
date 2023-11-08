@@ -1,6 +1,6 @@
 import { Formik, Form } from "formik";
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
-import styles from "../SignUpForm/SignUpForm.module.css";
+import styles from "../SignUpForm.module.css";
 import { FORM_VALIDTION_SCHEMA } from "../../../utils/validationSchemas";
 import Input from "../Input";
 

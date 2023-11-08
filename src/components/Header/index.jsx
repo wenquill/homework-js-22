@@ -5,6 +5,7 @@ import styles from "./Header.module.css";
 function Header() {
   return (
     <header className={styles.header}>
+      <Link className={styles.link} to="/">Home</Link>
       <Link className={styles.link} to="/login">Login</Link>
       <Link className={styles.link} to="/signup">Sign Up</Link>
     </header>
