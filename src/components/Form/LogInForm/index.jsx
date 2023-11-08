@@ -1,11 +1,10 @@
-import React from "react";
 import { Formik, Form } from "formik";
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
-import { FORM_VALIDTION_SCHEMA } from "../../utils/validationSchemas";
-import styles from "./SignUpForm.module.css";
+import styles from "../SignUpForm/SignUpForm.module.css";
+import { FORM_VALIDTION_SCHEMA } from "../../../utils/validationSchemas";
 import Input from "../Input";
 
-function SignUpForm() {
+function LogInForm() {
   const initialValues = {
     name: "",
     surname: "",
@@ -31,37 +30,13 @@ function SignUpForm() {
 
   return (
     <main className={styles.main}>
-      <h1>CREATE AN ACCOUNT</h1>
+      <h1>LOG IN</h1>
       <Formik
         initialValues={initialValues}
         onSubmit={handleSubmit}
         validationSchema={FORM_VALIDTION_SCHEMA}
       >
         <Form className={styles.form}>
-          <Input
-            name="name"
-            label="Name:"
-            type="text"
-            placeholder="your name"
-            classes={classes}
-          />
-
-          <Input
-            name="surname"
-            label="Surname:"
-            type="text"
-            placeholder="your surname"
-            classes={classes}
-          />
-
-          <Input
-            name="phoneNumber"
-            label="Phone number:"
-            type="text"
-            placeholder="your phone"
-            classes={classes}
-          />
-
           <Input
             name="email"
             label="Email:"
@@ -77,20 +52,20 @@ function SignUpForm() {
             placeholder="your password"
             classes={classes}
           />
-          
+
           <button className={styles.submitBtn} type="submit">
             Create an account
           </button>
         </Form>
       </Formik>
       <div className={styles.loginBtn}>
-        Already have an account?{" "}
-        <Link className={styles.loginBtn} to="/login">
-          Log in
+        Don`t have an account?{" "}
+        <Link className={styles.loginBtn} to="/signup">
+          Sign up
         </Link>
       </div>
     </main>
   );
 }
 
-export default SignUpForm;
+export default LogInForm;
